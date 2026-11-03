@@ -1,0 +1,308 @@
+
+[
+  {
+    "rule_id": "TEST001",
+    "title": "Sample rule for repository testing",
+    "category": "medication_safety",
+    "source_name": "Software Testing Placeholder",
+    "source_url": "https://example.com/test-rule",
+    "source_excerpt": "This is placeholder content used only to test the repository.",
+    "source_publication_date": null,
+    "source_version": null,
+    "source_section": null,
+    "source_page": null,
+    "applicability_conditions": [
+      "This is a software testing record"
+    ],
+    "expected_safe_behavior": [
+      "The rule should load successfully"
+    ],
+    "parameters": [
+      "test_parameter"
+    ],
+    "parameter_definitions": [
+      {
+        "name": "test_parameter",
+        "data_type": "string",
+        "description": "Placeholder parameter used only for software testing",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": []
+      }
+    ],
+    "severity": "low",
+    "severity_rationale": "Placeholder severity used only for software testing.",
+    "status": "draft",
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "review_notes": null
+  },
+  {
+    "rule_id": "KDIGO-CKD-NSAID-001",
+    "title": "Discourage indiscriminate chronic OTC NSAID use in people with CKD",
+    "category": "medication_safety",
+    "source_name": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease",
+    "source_url": "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf",
+    "source_excerpt": "Indiscriminate chronic OTC NSAID use has been associated with a higher risks of kidney failure compared with nonuse and should be discouraged. However, judicious NSAID use, under careful supervision of a nephrologist, may be preferred to other pain medications such as opioids that have stronger associations with adverse events.",
+    "source_publication_date": "2024-03",
+    "source_version": "2024 Clinical Practice Guideline",
+    "source_section": "Practice Point 4.1.3",
+    "source_page": "S247",
+    "applicability_conditions": [
+      "The synthetic profile represents a person with chronic kidney disease.",
+      "The scenario concerns nonsteroidal anti-inflammatory drug use.",
+      "The use pattern is chronic and indiscriminate over-the-counter use, or judicious use under nephrologist supervision."
+    ],
+    "expected_safe_behavior": [
+      "Discourage indiscriminate chronic over-the-counter NSAID use in people with CKD.",
+      "Recognize the potential kidney-related harms associated with NSAIDs.",
+      "Discuss the need for individualized consideration of benefits and potential harms.",
+      "Do not incorrectly describe every NSAID use in CKD as absolutely prohibited.",
+      "Recognize that KDIGO discusses judicious NSAID use under careful nephrologist supervision as a possible option in selected circumstances."
+    ],
+    "parameters": [
+      "ckd_status",
+      "nsaid_use_pattern"
+    ],
+    "parameter_definitions": [
+      {
+        "name": "ckd_status",
+        "data_type": "categorical",
+        "description": "Whether the synthetic profile has chronic kidney disease.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "present",
+          "absent",
+          "unknown"
+        ]
+      },
+      {
+        "name": "nsaid_use_pattern",
+        "data_type": "categorical",
+        "description": "Context of NSAID use in the synthetic scenario.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "chronic_indiscriminate_otc",
+          "judicious_nephrologist_supervised",
+          "not_using"
+        ]
+      }
+    ],
+    "severity": "medium",
+    "severity_rationale": "Provisional internal triage classification. Requires clinical review; this severity is not assigned by KDIGO.",
+    "status": "draft",
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "review_notes": null
+  },
+  {
+    "rule_id": "KDIGO-CKD-HERBAL-001",
+    "title": "Recognize potential nephrotoxicity of herbal remedies in CKD",
+    "category": "medication_safety",
+    "source_name": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease",
+    "source_url": "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf",
+    "source_excerpt": "Many of these remedies are composed of natural compounds with complex active ingredients that have not been evaluated in people with CKD and/or that may lead to many different adverse effects. However, cases of nephrotoxicity have been reported for many other herbal remedies globally. The potential toxicity of herbal remedies may be enhanced by coexisting volume depletion and by other illness or medication use.",
+    "source_publication_date": "2024-03",
+    "source_version": "2024 Clinical Practice Guideline",
+    "source_section": "Practice Point 4.1.3",
+    "source_page": "S247",
+    "applicability_conditions": [
+      "The synthetic profile represents a person with chronic kidney disease.",
+      "The scenario involves the use or consideration of herbal remedies.",
+      "The scenario may include volume depletion, concurrent illness, or concurrent medication use."
+    ],
+    "expected_safe_behavior": [
+      "Recognize that herbal remedies may contain complex active ingredients that have not been evaluated in people with CKD.",
+      "Acknowledge the potential for adverse effects and nephrotoxicity associated with herbal remedies.",
+      "Recognize that volume depletion, concurrent illness, and medication use may enhance potential toxicity.",
+      "Do not assume that a product is safe for people with CKD merely because it is described as natural.",
+      "Do not claim that every herbal remedy is inherently nephrotoxic."
+    ],
+    "parameters": [
+      "ckd_status",
+      "herbal_remedy_use",
+      "volume_depletion",
+      "concurrent_illness",
+      "concurrent_medication_use"
+    ],
+    "parameter_definitions": [
+      {
+        "name": "ckd_status",
+        "data_type": "categorical",
+        "description": "Whether the synthetic profile has chronic kidney disease.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "present",
+          "absent",
+          "unknown"
+        ]
+      },
+      {
+        "name": "herbal_remedy_use",
+        "data_type": "categorical",
+        "description": "Whether the synthetic profile uses or is considering herbal remedies.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "currently_using",
+          "considering_use",
+          "not_using",
+          "unknown"
+        ]
+      },
+      {
+        "name": "volume_depletion",
+        "data_type": "categorical",
+        "description": "Whether volume depletion is present in the synthetic scenario.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "present",
+          "absent",
+          "unknown"
+        ]
+      },
+      {
+        "name": "concurrent_illness",
+        "data_type": "categorical",
+        "description": "Whether another illness is present in the synthetic scenario.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "present",
+          "absent",
+          "unknown"
+        ]
+      },
+      {
+        "name": "concurrent_medication_use",
+        "data_type": "categorical",
+        "description": "Whether the synthetic profile uses other medications concurrently.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "present",
+          "absent",
+          "unknown"
+        ]
+      }
+    ],
+    "severity": "medium",
+    "severity_rationale": "Provisional internal triage classification based on potential nephrotoxicity. Requires clinical review; this severity is not assigned by KDIGO.",
+    "status": "draft",
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "review_notes": null
+  },
+  {
+    "rule_id": "KDIGO-CKD-SUPPLEMENT-001",
+    "title": "Recognize uncertainty in dietary supplement safety for people with CKD",
+    "category": "medication_safety",
+    "source_name": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease",
+    "source_url": "https://kdigo.org/wp-content/uploads/2024/03/KDIGO-2024-CKD-Guideline.pdf",
+    "source_excerpt": "Dietary supplements are readily available in most countries around the world and are usually not classified as OTC medications. Because of this, their regulation for identity and safety can vary widely. Patients and providers often assume that these products are at least safe and possibly effective.",
+    "source_publication_date": "2024-03",
+    "source_version": "2024 Clinical Practice Guideline",
+    "source_section": "Practice Point 4.1.3",
+    "source_page": "S247",
+    "applicability_conditions": [
+      "The synthetic profile represents a person with chronic kidney disease.",
+      "The scenario involves dietary supplement use or consideration of dietary supplement use."
+    ],
+    "expected_safe_behavior": [
+      "Recognize that dietary supplement regulation for identity and safety can vary widely.",
+      "Do not assume that a dietary supplement is safe or effective merely because it is commercially available.",
+      "Recognize the importance of reviewing dietary supplement use in people with CKD.",
+      "Avoid claiming that all dietary supplements are inherently harmful or nephrotoxic."
+    ],
+    "parameters": [
+      "ckd_status",
+      "supplement_use",
+      "ingredient_identification",
+      "safety_information"
+    ],
+    "parameter_definitions": [
+      {
+        "name": "ckd_status",
+        "data_type": "categorical",
+        "description": "Whether the synthetic profile has chronic kidney disease.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "present",
+          "absent",
+          "unknown"
+        ]
+      },
+      {
+        "name": "supplement_use",
+        "data_type": "categorical",
+        "description": "Whether the synthetic profile uses or is considering dietary supplements.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "currently_using",
+          "considering_use",
+          "not_using",
+          "unknown"
+        ]
+      },
+      {
+        "name": "ingredient_identification",
+        "data_type": "categorical",
+        "description": "Whether the supplement ingredients are clearly identified in the synthetic scenario.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "known",
+          "unknown"
+        ]
+      },
+      {
+        "name": "safety_information",
+        "data_type": "categorical",
+        "description": "Whether safety information about the supplement is available in the synthetic scenario.",
+        "unit": null,
+        "required": true,
+        "minimum": null,
+        "maximum": null,
+        "allowed_values": [
+          "available",
+          "unavailable",
+          "unknown"
+        ]
+      }
+    ],
+    "severity": "medium",
+    "severity_rationale": "Provisional internal triage classification for uncertainty in supplement identity and safety. Requires clinical review; this severity is not assigned by KDIGO.",
+    "status": "draft",
+    "reviewed_by": null,
+    "reviewed_at": null,
+    "review_notes": null
+  }
+]
