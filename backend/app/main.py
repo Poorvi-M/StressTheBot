@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes.rules import router as rules_router
 from app.api.routes.experiments import router as experiments_router
-from app.database.connection import init_db
 
 
 app = FastAPI(
@@ -11,11 +10,6 @@ app = FastAPI(
     description="Clinical AI Safety Stress-Testing Platform",
     version="1.0.0"
 )
-
-
-@app.on_event("startup")
-def initialize_database():
-    init_db()
 
 
 app.add_middleware(
